@@ -26,7 +26,7 @@ A small synthetic example that classifies customer issues, prioritizes them, and
 
 ## Tools and platforms I have used
 
-My hands-on work has included tools such as ChatGPT, Gemini, Microsoft Copilot, Replit, GitHub, Microsoft 365, SharePoint, Salesforce/CRM platforms, and other operational systems.
+My hands-on work has included tools such as ChatGPT, Gemini, Microsoft Copilot, Replit, GitHub, Microsoft 365, SharePoint, CRM platforms, and other operational systems.
 
 I do not present myself as a software engineer. My strength is using technology as an operator: understanding the problem, learning enough to work effectively with the tools, prototyping solutions, and connecting people, process, and technology to improve outcomes.
 

@@ -2,7 +2,7 @@
 
 ## Context
 
-VIRA is a modular vehicle-incident reporting workflow developed for Marathon General.
+VIRA is a modular vehicle-incident reporting workflow developed to improve how a field-based organization responds to and documents vehicle incidents.
 
 It was designed to move an incident from immediate awareness through structured fact gathering, participant statements, and eventual completion of the official company incident report.
 
@@ -21,7 +21,7 @@ It answers:
 
 > Who needs to know right now?
 
-**Output:** Immediate alert to designated MGI personnel.
+**Output:** Immediate alert to designated company personnel.
 
 ---
 
@@ -64,7 +64,7 @@ It answers:
 
 > What is the final official record?
 
-**Output:** Final MGI Incident Report.
+**Output:** Final Company Incident Report.
 
 **Current status:** This final consolidation stage has not yet been built.
 
@@ -87,7 +87,7 @@ The stages create structured outputs that support the next part of the incident-
 
 > **Notify. Initiate. Collect. Complete.**
 >
-> VIRA helps Marathon General move from incident awareness to documented resolution through a consistent and structured reporting process.
+> VIRA helps move an organization from incident awareness to documented resolution through a consistent and structured reporting process.
 
 ## Development Approach
 

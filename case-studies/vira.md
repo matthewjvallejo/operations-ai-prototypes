@@ -1,118 +1,132 @@
-# VIRA — Sanitized Vehicle Incident Reporting Prototype
+# VIRA — Vehicle Incident Reporting Assistant
 
-## Context
+## Overview
 
-VIRA is a modular vehicle-incident reporting workflow developed to improve how a field-based organization responds to and documents vehicle incidents.
+VIRA is a mobile-first, browser-based vehicle and workplace incident reporting system designed to move an event from first awareness through structured fact gathering, witness evidence, and eventual Safety review.
 
-It was designed to move an incident from immediate awareness through structured fact gathering, participant statements, and eventual completion of the official company incident report.
+The product is deliberately separated into four focused tools rather than one large incident form:
 
-Rather than begin with a large systems project, the concept was developed as a set of focused stages, each with a different operational purpose and output.
+- **Notify** — capture the first usable signal that an incident occurred.
+- **Initiate** — conduct the full incident interview and create a structured working draft.
+- **Collect** — capture an independent witness statement while preserving the source record.
+- **Complete** — a proof-of-concept investigation workspace for reconciling source records, identifying conflicts and gaps, and supporting final Safety review.
 
-## VIRA Family
-
-### VIRA — Notify
-#### "Something Happened"
-
-Provides immediate notification that an incident has occurred and gives leadership the information needed to begin responding.
-
-Notify is designed for speed, not documentation.
-
-It answers:
-
-> Who needs to know right now?
-
-**Output:** Immediate alert to designated company personnel.
-
----
-
-### VIRA — Initiate
-#### "What Do We Know?"
-
-Captures the initial known facts surrounding the incident and creates a structured draft working document.
-
-Initiate establishes the factual baseline from which the investigation and reporting process begins.
-
-It answers:
-
-> What facts do we currently have?
-
-**Output:** Draft Working Document.
-
----
-
-### VIRA — Collect
-#### "Tell Me What Happened"
-
-Captures statements from drivers, foremen, witnesses, and other participants while memories are still fresh.
-
-Collect focuses on observations, recollections, and personal accounts rather than structured incident data.
-
-It answers:
-
-> What do the people involved say happened?
-
-**Output:** Statement Draft(s).
-
----
-
-### VIRA — Complete
-#### "Finish The Report"
-
-Combines information from Notify, Initiate, Collect, and any additional investigation findings to create the official company incident report.
-
-It answers:
-
-> What is the final official record?
-
-**Output:** Final Company Incident Report.
-
-**Current status:** This final consolidation stage has not yet been built.
+Notify, Initiate, and Collect are working production tools. Complete remains an active proof-of-concept direction.
 
 ## Operating Model
 
-The VIRA workflow can be summarized as:
+The VIRA family follows a simple progression:
 
 **Notify → Initiate → Collect → Complete**
 
-- **Notify** — Something happened.
-- **Initiate** — What do we know?
-- **Collect** — What do the participants say happened?
-- **Complete** — What is the official record?
+The sequence is not rigid. Witness records can be captured independently and linked later when necessary.
 
-Each stage has a different operational purpose and should not be treated as one monolithic application.
+A shared Incident ID is used when available to relate records across the tools. The system is also designed for situations where a witness does not know the Incident ID, allowing later contextual matching rather than forcing the witness to supply information they may not have.
 
-The stages create structured outputs that support the next part of the incident-response and reporting process.
+## VIRA — Notify
+### Something Happened
 
-## Mission
+Notify is the first-signal tool.
 
-> **Notify. Initiate. Collect. Complete.**
->
-> VIRA helps move an organization from incident awareness to documented resolution through a consistent and structured reporting process.
+Its purpose is speed: capture enough reliable information for leadership or Safety to begin responding without forcing the reporter through the full incident interview.
 
-## Development Approach
+It captures core reporter, incident, driver, vehicle, injury, emergency-response, location, and short-description information and produces a structured first-signal draft.
 
-The project reflects a practical, iterative operating approach:
+The user can share, copy, or download that record. Notify does **not** automatically send a message or create a final approved report.
 
-1. Understand the operating problem.
-2. Identify the smallest useful capability for that stage of the workflow.
-3. Prototype the concept.
-4. Test it against the real operating need.
-5. Adjust based on what worked, what did not, and what users needed next.
-6. Standardize or expand only when the concept proves useful.
+## VIRA — Initiate
+### What Do We Know?
 
-## What this demonstrates
+Initiate is the full structured incident interview.
 
-This project reflects how technology is used in operations:
+It captures the known facts, preserves unknown or unavailable information, identifies follow-up items, and produces a clearly labeled working draft for Safety review.
 
-- Start with the operating problem rather than the platform.
-- Break a broader workflow into focused operational stages.
-- Prototype practical tools rather than waiting for a perfect future-state system.
-- Test whether each stage creates real value.
-- Preserve structured outputs so information can move forward through the process.
-- Add structure only when the concept earns it.
+The interview uses conditional questions and can capture areas such as:
 
-## Confidentiality note
+- incident basics;
+- police and emergency response;
+- company vehicle and driver information;
+- damage, towing, and out-of-service status;
+- additional company vehicles;
+- multiple non-company vehicles;
+- insurance, license, VIN, and other available information.
 
-This case study is intentionally high level.
+Missing information is deliberately visible. States such as **Unknown**, **Not Available**, **Not Applicable**, and **Not Answered — Follow-up Required** are kept distinct instead of being silently treated as complete.
 
-No proprietary business logic, internal data, employee information, customer information, credentials, claim details, or employer-sensitive implementation details are included.
+The result is a working document, not a finalized or approved incident report.
+
+## VIRA — Collect
+### Tell Me What Happened
+
+Collect is independent witness-evidence intake rather than a second incident questionnaire.
+
+It supports English and Spanish and is designed to preserve what the witness actually said while still creating a useful review record.
+
+The workflow can preserve:
+
+- witness identity and incident context;
+- the original witness statement;
+- an optional witness-reviewed correction when dictation produces errors;
+- the original-language record;
+- a separate English translation;
+- certification;
+- electronic signature and certification time.
+
+Original wording is not silently replaced by a translation or corrected transcript. When both a raw dictation transcript and a witness-reviewed statement exist, they remain separately identified so the history of the evidence is visible.
+
+## VIRA — Complete
+### Investigation Workspace — Proof of Concept
+
+Complete is intentionally **not** another questionnaire.
+
+Its planned role is to help a Safety Manager begin with the records already created by Notify, Initiate, Collect, and other available source documents.
+
+The proposed workflow is to:
+
+1. import source records;
+2. extract and normalize facts without changing the original wording;
+3. preserve the provenance of each fact;
+4. identify conflicts, missing information, and unlinked records;
+5. allow the Safety Manager to accept, leave unresolved, link, request follow-up, or annotate information;
+6. produce a reviewed investigation report that clearly separates reported facts, verified information, unresolved issues, and human decisions.
+
+Complete must not silently choose between conflicting source values or replace Safety Manager judgment.
+
+## Design Principles
+
+VIRA reflects several operating principles:
+
+- **Problem first, platform second.**
+- Break a broader process into focused tools with clear jobs.
+- Preserve source wording when the information is evidence.
+- Make missing information visible instead of pretending the record is complete.
+- Keep working drafts, witness evidence, and reviewed reports distinct.
+- Preserve provenance so reviewers can see where information came from.
+- Use human judgment for conflicts, conclusions, and final review.
+- Prototype the smallest useful workflow, test it, then expand only when the concept earns it.
+
+## Current Product Boundary
+
+The current tools are mobile-friendly browser workflows and do not require a native iOS or Android application.
+
+The prototype is intentionally lightweight. It does not currently:
+
+- determine fault, liability, or root cause;
+- automatically approve or close an incident;
+- replace emergency response;
+- replace Safety Manager judgment;
+- silently resolve conflicting information;
+- maintain a persistent incident database;
+- provide offline mode.
+
+## Why the Project Matters
+
+VIRA demonstrates a practical approach to operational technology: identify a real workflow problem, separate it into understandable stages, prototype quickly, preserve the integrity of the underlying information, and keep human judgment in control where the stakes require it.
+
+The project is a working example of using AI-enabled development and lightweight web technology to improve an operational process without beginning with a large systems implementation.
+
+## Confidentiality
+
+This public case study is intentionally company-neutral and high level.
+
+It excludes employer identification, proprietary business logic, internal records, employee or customer information, credentials, claim details, and other organization-sensitive implementation information.

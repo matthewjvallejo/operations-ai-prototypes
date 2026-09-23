@@ -1,32 +1,118 @@
-# VIRA — Sanitized Operations Prototype
+# VIRA — Sanitized Vehicle Incident Reporting Prototype
 
 ## Context
 
-At Marathon General, I encountered an operating problem where the existing process and available tools were not giving people the visibility or workflow support they needed.
+VIRA is a modular vehicle-incident reporting workflow developed for Marathon General.
 
-Rather than begin with a large systems project, I used an AI-enabled development platform to prototype a practical solution.
+It was designed to move an incident from immediate awareness through structured fact gathering, participant statements, and eventual completion of the official company incident report.
 
-## Approach
+Rather than begin with a large systems project, the concept was developed as a set of focused stages, each with a different operational purpose and output.
 
-My approach was deliberately small and iterative:
+## VIRA Family
 
-1. Understand the operating problem and where people were getting stuck.
-2. Identify the minimum useful capability that could improve the workflow.
-3. Use Replit to prototype the concept.
-4. Test the prototype against the real operating need.
+### VIRA — Notify
+#### "Something Happened"
+
+Provides immediate notification that an incident has occurred and gives leadership the information needed to begin responding.
+
+Notify is designed for speed, not documentation.
+
+It answers:
+
+> Who needs to know right now?
+
+**Output:** Immediate alert to designated MGI personnel.
+
+---
+
+### VIRA — Initiate
+#### "What Do We Know?"
+
+Captures the initial known facts surrounding the incident and creates a structured draft working document.
+
+Initiate establishes the factual baseline from which the investigation and reporting process begins.
+
+It answers:
+
+> What facts do we currently have?
+
+**Output:** Draft Working Document.
+
+---
+
+### VIRA — Collect
+#### "Tell Me What Happened"
+
+Captures statements from drivers, foremen, witnesses, and other participants while memories are still fresh.
+
+Collect focuses on observations, recollections, and personal accounts rather than structured incident data.
+
+It answers:
+
+> What do the people involved say happened?
+
+**Output:** Statement Draft(s).
+
+---
+
+### VIRA — Complete
+#### "Finish The Report"
+
+Combines information from Notify, Initiate, Collect, and any additional investigation findings to create the official company incident report.
+
+It answers:
+
+> What is the final official record?
+
+**Output:** Final MGI Incident Report.
+
+**Current status:** This final consolidation stage has not yet been built.
+
+## Operating Model
+
+The VIRA workflow can be summarized as:
+
+**Notify → Initiate → Collect → Complete**
+
+- **Notify** — Something happened.
+- **Initiate** — What do we know?
+- **Collect** — What do the participants say happened?
+- **Complete** — What is the official record?
+
+Each stage has a different operational purpose and should not be treated as one monolithic application.
+
+The stages create structured outputs that support the next part of the incident-response and reporting process.
+
+## Mission
+
+> **Notify. Initiate. Collect. Complete.**
+>
+> VIRA helps Marathon General move from incident awareness to documented resolution through a consistent and structured reporting process.
+
+## Development Approach
+
+The project reflects a practical, iterative operating approach:
+
+1. Understand the operating problem.
+2. Identify the smallest useful capability for that stage of the workflow.
+3. Prototype the concept.
+4. Test it against the real operating need.
 5. Adjust based on what worked, what did not, and what users needed next.
-6. Determine what was worth standardizing or expanding.
+6. Standardize or expand only when the concept proves useful.
 
 ## What this demonstrates
 
-This project reflects how I use technology in operations:
+This project reflects how technology is used in operations:
 
-- I start with the problem rather than the platform.
-- I am willing to work directly with emerging tools.
-- I prototype rather than waiting for a perfect future-state system.
-- I use practical testing to determine whether an idea creates value.
-- I add structure only when the concept earns it.
+- Start with the operating problem rather than the platform.
+- Break a broader workflow into focused operational stages.
+- Prototype practical tools rather than waiting for a perfect future-state system.
+- Test whether each stage creates real value.
+- Preserve structured outputs so information can move forward through the process.
+- Add structure only when the concept earns it.
 
 ## Confidentiality note
 
-This case study is intentionally high level. No proprietary business logic, internal data, employee information, customer information, credentials, or employer-sensitive implementation details are included.
+This case study is intentionally high level.
+
+No proprietary business logic, internal data, employee information, customer information, credentials, claim details, or employer-sensitive implementation details are included.
